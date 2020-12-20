@@ -11,7 +11,7 @@ import { ServiceWorker } from 'aws-amplify';
           target="_blank"
           rel="noopener noreferrer"
           class="button--green"
-          @click="this.registerSW()"
+          @click="registerSW()"
         >
           register SW
         </a>
@@ -21,18 +21,13 @@ import { ServiceWorker } from 'aws-amplify';
 </template>
 
 <script>
-export default {
-  // computed: {
-  //   sw() {
-  //     // console.log(serviceWorker)
-  //     return serviceWorker
-  //   }
+import { ServiceWorker } from '@aws-amplify/core';
 
-  // }
+export default {
   methods: {
     async registerSW() {
-      console.log('registerSW')
-      await serviceWorker.register('@/static/service-worker.js', '/');
+      const serviceWorker = new ServiceWorker();
+      await serviceWorker.register('/service-worker.js', '');
     }
   }
 }
