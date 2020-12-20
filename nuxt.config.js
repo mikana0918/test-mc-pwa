@@ -18,8 +18,11 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '@/plugins/AWS/AmplifySetup.js' },
-    { src: '@/plugins/AWS/PinpointSetup.js' }
+    { src: '@/plugins/AWS/Amplify/Setup.js' },
+    { src: '@/plugins/AWS/Amplify/UpdateEndpoint.js' },
+    { src: '@/plugins/AWS/Amplify/PWA/ServiceWorker.js' },
+
+    { src: '@/plugins/AWS/Pinpoint/Setup.js' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

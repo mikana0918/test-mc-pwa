@@ -1,3 +1,4 @@
+import { ServiceWorker } from 'aws-amplify';
 <template>
   <div class="container">
     <div>
@@ -7,20 +8,12 @@
       </h1>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
           target="_blank"
           rel="noopener noreferrer"
           class="button--green"
+          @click="this.registerSW()"
         >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
+          register SW
         </a>
       </div>
     </div>
@@ -28,7 +21,22 @@
 </template>
 
 <script>
-export default{}
+export default {
+  // computed: {
+  //   sw() {
+  //     // console.log(serviceWorker)
+  //     return serviceWorker
+  //   }
+
+  // }
+  methods: {
+    async registerSW() {
+      console.log('registerSW')
+      await serviceWorker.register('@/static/service-worker.js', '/');
+    }
+  }
+}
+
 </script>
 
 <style>
