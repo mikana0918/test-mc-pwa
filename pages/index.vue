@@ -27,7 +27,7 @@ export default {
   methods: {
     async registerSW() {
       const serviceWorker = new ServiceWorker();
-      await serviceWorker.register('/service-worker.js', '');
+      await serviceWorker.register('/service-worker.js', '/');
     }
   }
 }
