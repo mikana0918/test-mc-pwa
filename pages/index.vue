@@ -21,15 +21,14 @@ import { ServiceWorker } from 'aws-amplify';
 </template>
 
 <script>
-import { ServiceWorker } from '@aws-amplify/core';
+import { ServiceWorker } from 'aws-amplify';
 
 export default {
-  methods: {
-    async registerSW() {
+  async created() {
       const serviceWorker = new ServiceWorker();
-      await serviceWorker.register('/service-worker.js', '/');
-    }
-  }
+      await serviceWorker.register('@/static/service-worker.js', '/')
+      console.log('registered SW')
+  },
 }
 
 </script>
