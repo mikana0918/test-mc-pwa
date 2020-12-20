@@ -20,7 +20,7 @@ export default {
   plugins: [
     { src: '@/plugins/AWS/Amplify/Setup.js' },
     { src: '@/plugins/AWS/Amplify/UpdateEndpoint.js' },
-    { src: '@/plugins/AWS/Amplify/PWA/ServiceWorker.js' },
+    // { src: '@/plugins/AWS/Amplify/PWA/ServiceWorker.js' },
 
     { src: '@/plugins/AWS/Pinpoint/Setup.js' },
   ],
@@ -45,5 +45,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  pwa: {
+    workbox: {
+      /* workbox options */
+    }
   }
 }
